@@ -1,0 +1,16 @@
+* cli-project-switcher
+Simple script that prints all configured project to the stdout.
+* Usage
+** Create a config file
+Create a config file under .config/cli-project-switcher containing your desired projects.
+
+You can add your projects paths like this:
+#+begin_src shell
+  echo "~/projects/my-python-project" >> ~/.config/cli-project-switcher/projects
+#+end_src
+
+Split projects with a newline.
+** Use with fzf
+#+begin_src shell
+  cd $(./main.py | fzf)
+#+end_src
