@@ -13,7 +13,13 @@ def read_project_dirs():
     with open(PROJECT_CONFIG_FILE, "r") as f:
         content = f.read()
 
-    return content.split("\n")[:-1]
+    non_empty_lines = []
+
+    for line in content.split("\n"):
+        if line != "":
+            non_empty_lines.append(line)
+
+    return non_empty_lines
 
 def main():
     try:
